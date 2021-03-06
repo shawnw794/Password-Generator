@@ -15,21 +15,22 @@ generateBtn.addEventListener("click", writePassword);
 
 //Elements
 const password = document.querySelector('#password')
-const button = document.querySelector('button')
+const button = document.querySelector('#generate')
 
 // Password Data
-let charaters = ;
+let charaters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&()*+,-./:;<=>?@[\]^_`{|}~';
 let passwordLength = 15;
 let passwordValue = '';
 
 // Create Password
 const createPassword = () => {
 passwordValue = '';
-}
 
-for(let i = 0, i <passwordLength; i++) {
-  let number = Math.floor(Math.random() * characters.length);
-  passwordValue += charaters.substring(number, number +1);
+  for (let i = 0; i < passwordLength; i++) {
+    let number = Math.floor(Math.random() * characters.length);
+    passwordValue += charaters.substring(number, number +1);
+  }
+  password.value = passwordValue;
 }
 
  // Event
