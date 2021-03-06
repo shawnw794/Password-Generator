@@ -13,10 +13,24 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-const characterAmountRange
-const characterAmountNumber
-const includeUppercaseElement
-const addEventListener remove this
+//Elements
+const password = document.querySelector('#password')
+const button = document.querySelector('button')
+
+// Password Data
+let charaters = ;
+let passwordLength = 15;
+let passwordValue = '';
+
+// Create Password
+const createPassword = () => {
+passwordValue = '';
+
+for(let i = 0, i <passwordLength; i++) {
+  let number = Math.floor(Math.random() * characters.length);
+  passwordValue += charaters.substring(number, number +1);
+}
+}
 
 
 form.addEventListener('')
