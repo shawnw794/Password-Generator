@@ -25,12 +25,14 @@ let passwordValue = '';
 // Create Password
 const createPassword = () => {
 passwordValue = '';
+}
 
 for(let i = 0, i <passwordLength; i++) {
   let number = Math.floor(Math.random() * characters.length);
   passwordValue += charaters.substring(number, number +1);
 }
-}
 
+ // Event
+ button.addEventListener('click', createPassword)
 
 form.addEventListener('')
