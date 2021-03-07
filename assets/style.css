@@ -130,6 +130,7 @@ button[disabled] {
     padding: 10px 15px;
   }
 
+/* Password */
   #password {
     font-size: 1rem;
   }
