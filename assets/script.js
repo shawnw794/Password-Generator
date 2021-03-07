@@ -14,11 +14,11 @@ function generatePassword(){
     var number = "0123456789";
     var specialCharacters = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
     var passCreation = "";
-    while (length < 8 || length > 34) {
-        length = prompt("ask the user for the length of the password between 8 to 34 characters long");
+    while (length < 8 || length > 128) {
+        length = prompt("ask the user for the length of the password between 8 to 128 characters long");
         //if (length==null){
         if (length === "") {
-            return "Chose any numbers between 8 and 34 for password length.";
+            return "Choose any numbers between 8 and 128 to determine password length.";
         }
       }
         var lowerCase = confirm("Do you want lowercase in your password?")
