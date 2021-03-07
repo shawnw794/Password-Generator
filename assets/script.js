@@ -1,31 +1,34 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
+
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var number = "0123456789";
+var specialCharacters = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+var passCreation = "";
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 function generatePassword(){
-    var lowercase = "abcdefghijklmnopqrstuvwxyz";
-    var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var number = "0123456789";
-    var specialCharacters = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-    var passCreation = "";
     while (length < 8 || length > 128) {
-        length = prompt("ask the user for the length of the password between 8 to 128 characters long");
+        length = prompt("Choose a number between 8 and 128 to determine the character length of your password.");
         //if (length==null){
-        if (length === "") {
-            return "Choose any numbers between 8 and 128 to determine password length.";
+        if(length === "") {
+            return "Enter a number between 8 and 128 to determine password character length.";
         }
-      }
-        var lowerCase = confirm("Do you want lowercase in your password?")
+        }
+        var lowerCase = confirm("Do you want lower case in your password?")
         if (lowerCase==true){
             passCreation=passCreation.concat(lowercase)
         }
-        var upperCase = confirm("Do you want uppercase in your password?")
+        var upperCase = confirm("Do you want upper case in your password?")
         if (upperCase==true){
             passCreation=passCreation.concat(uppercase)
         }
@@ -38,9 +41,10 @@ function generatePassword(){
             passCreation=passCreation.concat(specialCharacters)
         }
         var generatedPassword = "";
-        for (var i = 0; i < length; i++){
-            var x=Math.floor(Math.random() * (passCreation.length));
+        for (i = 0; i < length; i++){
+            x = Math.floor(Math.random() * (passCreation.length));
             generatedPassword = generatedPassword.concat(passCreation[x])
         }
         return generatedPassword;
+            // Display new randomly generated password 
 }
